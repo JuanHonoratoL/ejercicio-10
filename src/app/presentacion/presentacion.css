@@ -1,0 +1,220 @@
+:host {
+    display: block;
+    width: 100%;
+    max-width: 480px;
+    margin: auto;
+}
+
+.card {
+    background: linear-gradient(135deg,
+            rgba(255, 255, 255, 0.12) 0%,
+            rgba(255, 255, 255, 0.03) 100%);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 20px;
+    padding: 30px 25px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    text-align: center;
+    transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.015);
+    border-color: rgba(56, 189, 248, 0.5);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.55),
+        0 0 25px rgba(56, 189, 248, 0.25),
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+}
+
+.avatar {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(56, 189, 248, 0.8);
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+    margin-bottom: 15px;
+
+}
+
+.card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: transparent;
+    border: none;
+    padding: 0;
+}
+
+.card-header h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.institucion {
+    color: #38bdf8;
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    font-size: 0.9rem;
+    color: #cbd5e1;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+
+.info-row {
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.9rem;
+}
+
+.info-row .label {
+    color: #94a3b8;
+    font-weight: 500;
+}
+
+.info-row .value {
+    color: #f1f5f9;
+    font-weight: 600;
+}
+
+.skills-section {
+    margin-top: 20px;
+}
+
+.skills-section h3 {
+    font-size: 1rem;
+    color: #ffffff;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.skills-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skill-badge {
+    background: rgba(56, 189, 248, 0.15);
+    color: #38bdf8;
+    border: 1px solid rgba(56, 189, 248, 0.35);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.skill-badge:hover {
+    background: rgba(56, 189, 248, 0.3);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(56, 189, 248, 0.3);
+}
+
+.github::before {
+    content: "";
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-left: 2.5px;
+    margin-right: 2.5px;
+    margin-bottom: 1.5px;
+    background-image: url("https://cdn.iconscout.com/icon/free/png-256/free-github-logo-icon-svg-download-png-8630395.png?f=webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.481);
+}
+
+a:hover {
+    color: #38bdf8;
+    text-shadow:
+        0 0 5px #38bdf8,
+        0 0 10px #38bdf8,
+        0 0 20px #818cf8,
+        0 0 40px #818cf8;
+}
+
+@media (max-width: 600px) {
+    :host {
+        max-width: 100%;
+    }
+
+    /* Reducir el acolchado de la tarjeta para aprovechar la pantalla */
+    .card {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    /* Escalar la imagen de perfil */
+    .avatar {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+    }
+
+    .card-header h2 {
+        font-size: 1.25rem;
+    }
+
+    .institucion {
+        font-size: 0.85rem;
+    }
+
+    .tagline {
+        font-size: 0.82rem;
+        margin-bottom: 15px;
+    }
+
+    /* Apilar label y valor verticalmente para evitar desbordes con textos largos */
+    .info-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+        margin-bottom: 10px;
+    }
+
+    .info-row .value {
+        word-break: break-all;
+        /* Evita que el correo rompa el ancho de la tarjeta */
+    }
+
+    /* Hacer más compactos los chips/badges */
+    .skills-section h3 {
+        font-size: 0.9rem;
+    }
+
+    .skills-container {
+        gap: 6px;
+    }
+
+    .skill-badge {
+        padding: 4px 10px;
+        font-size: 0.75rem;
+    }
+}

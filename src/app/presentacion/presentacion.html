@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="card-header">
+        <img src="estudiante.png" alt="Foto de perfil" class="avatar">
+        <h2>{{ nombre }}</h2>
+        <p class="institucion">{{ institucion }}</p>
+        <p class="tagline">{{ mensaje }}</p>
+        <a class="github" href="https://github.com/JuanHonoratoL" target="_blank">Mi GitHub</a>
+    </div>
+
+    <div class="card-body">
+        <div class="info-row">
+            <span class="label">Carrera:</span>
+            <span class="value">{{ carrera }}</span>
+        </div>
+        <div class="info-row">
+            <span class="label">Edad:</span>
+            <span class="value">{{ edad }}</span>
+        </div>
+        <div class="info-row">
+            <span class="label">Semestre:</span>
+            <span class="value">{{ semestre }}°</span>
+        </div>
+        <div class="info-row">
+            <span class="label">Correo:</span>
+            <span class="value"><a href="mailto:honoratolopezjuanpablo@gmail.com">{{ correo }}</a></span>
+        </div>
+
+        <div class="skills-section">
+            <h3>Idiomas</h3>
+            <div class="skills-container">
+                @for (idioma of idiomas; track $index) {
+                <span class="skill-badge">{{ idioma }}</span>
+                }
+            </div>
+        </div>
+        <div class="skills-section">
+            <h3>Habilidades</h3>
+            <div class="skills-container">
+                @for (habilidad of habilidades; track $index) {
+                <span class="skill-badge">{{ habilidad }}</span>
+                }
+            </div>
+        </div>
+        <div class="skills-section">
+            <h3>Intereses</h3>
+            <div class="skills-container">
+                @for (interes of intereses; track $index) {
+                <span class="skill-badge">{{ interes }}</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>

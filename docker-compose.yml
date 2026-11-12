@@ -1,0 +1,16 @@
+services:
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: angular_dev
+    ports:
+      - "4200:4200"
+    volumes:
+      # Monta el código fuente actual para cambios en caliente
+      - .:/app
+      # Volumen anónimo para preservar las dependencias compiladas dentro del contenedor
+      - /app/node_modules
+      - /app/.angular
+    environment:
+      - NODE_ENV=development
