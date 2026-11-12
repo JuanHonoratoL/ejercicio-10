@@ -23,6 +23,7 @@ export class Presentacion {
     "C",
     "Spring Boot",
     "Java",
+    "Python",
     "HTML",
     "Android",
     "CSS",
